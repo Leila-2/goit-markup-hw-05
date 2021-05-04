@@ -27,6 +27,7 @@ h5,
 h6,
 p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .list {
@@ -125,6 +126,17 @@ body {
 }
 .link.nav.current {
   color: var(--accent-color);
+  position: relative;
+}
+.link.nav.current::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
 }
 .link:hover,
 .link:focus,
@@ -296,6 +308,8 @@ body {
 .section.team {
   background-color: var(--secondary-bg);
 }
+/* Чем мы занимаемся */
+
 .section.gallery {
   padding-top: 0;
 }
@@ -327,6 +341,26 @@ body {
 .gallery-item {
   /* margin-right: 30px; */
   flex-basis: calc((100% - 3 * 30px) / 3);
+  position: relative;
+  display: flex;
+}
+
+.gallery-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: #ffffff;
+
+  position: absolute;
+  bottom: 0;
+  /* width: 100%; */
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 100%;
 }
 
 .team-names {
@@ -336,7 +370,7 @@ body {
   letter-spacing: 0.03em;
   color: var(--secondary-color);
   /* padding-top: 30px; */
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 .team-cards {
   text-align: center;
@@ -578,4 +612,31 @@ body {
 
 .portfolio-card:nth-last-child(-n + 3) {
   margin-bottom: 0;
+}
+.portfolio-discription {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  background-color: rgba(33, 150, 243, 0.9);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.focused-card:hover .overlay {
+  opacity: 1;
 }
