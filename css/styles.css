@@ -637,7 +637,8 @@ body {
   padding-left: 24px;
   padding-right: 24px;
 }
-.focused-card:hover .overlay {
+.focused-card:hover .overlay,
+.focused-card:focus .overlay {
   opacity: 1;
 }
 
